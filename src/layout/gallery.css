@@ -1,0 +1,219 @@
+.searchbar {
+  width: inherit;
+}
+
+.input_catalog_search {
+  padding: 1.65em 2.4em;
+  width: inherit;
+  max-height: 1.2rem;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  color: #2e3d49;
+  background: calc(100% - 1.4em) 50%/1.6rem #fff url(https://www.udacity.com/assets/iridium/images/course-catalog/search.svg) no-repeat;
+  background-position: 10px center;
+  background-size: 17px;
+  outline: none;
+  margin: 0 auto;
+  height: 3.5rem;
+  font-size: 0.9rem;
+  border-radius: 9px;
+  display: block;
+}
+
+.grid-container {
+  width: inherit;
+}
+
+.animated-background, .item .card__header .up, .item .card__header .down, .item {
+  animation-duration: 2.25s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeHolderShimmer;
+  animation-timing-function: linear;
+  background: #F6F6F6;
+  background: linear-gradient(to right, #F6F6F6 8%, #F0F0F0 18%, #F6F6F6 33%);
+}
+
+/* loader skelecton */
+.container {
+  display: flex;
+  flex-flow: column wrap;
+  align-content: space-between;
+  height: 665px;
+  position: relative;
+  top: -80px;
+  /* Optional */
+  border-radius: 3px;
+  padding: 20px;
+  max-width: 700px;
+  margin: 40px auto;
+  counter-reset: items;
+}
+
+.item {
+  width: 28%;
+  color: transparent;
+  border-radius: 7px;
+  /* Optional */
+  position: relative;
+  margin-bottom: 2%;
+  background-color: #e6e6e6;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 2px 2px #e6e6e6, 0 8px 8px e6e6e6;
+  padding: 15px;
+  box-sizing: border-box;
+}
+.item .card__header {
+  position: absolute;
+  bottom: 5px;
+}
+.item .card__header p {
+  margin: 5px -4px;
+  background: #e6e6e6;
+  border-radius: 2px;
+  padding: 5px;
+}
+.item .card__header .up {
+  width: 87px;
+  background: #e6e6e6;
+  border: 1px solid #e6e6e6;
+}
+.item .card__header .down {
+  width: 60px;
+  background: #e6e6e6;
+  border: 1px solid #e6e6e6;
+}
+
+@keyframes placeHolderShimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}
+.item::before {
+  counter-increment: items;
+  content: counter(items);
+}
+
+/* Re-order items into 3 rows */
+.item:nth-child(3n + 1) {
+  order: 1;
+}
+
+.item:nth-child(3n + 2) {
+  order: 2;
+}
+
+.item:nth-child(3n) {
+  order: 3;
+}
+
+.container::before,
+.container::after {
+  content: "";
+  flex-basis: 100%;
+  width: 0;
+  order: 2;
+}
+
+.layout-child-first {
+  display: flex;
+  justify-content: center;
+  background: #dde2e9;
+  padding: 4rem 10px;
+}
+.layout-child-first .search__container {
+  display: flex;
+  justify-content: center;
+  width: 87%;
+}
+
+.loading-skelecton {
+  border-radius: 5px;
+  border: 1px solid #e6e6e6;
+}
+
+.masonry {
+  position: relative;
+  top: -30px;
+  max-width: 700px;
+  cursor: pointer;
+  margin: 0 auto;
+  columns: 3;
+  column-gap: 5px;
+}
+@media (max-width: 1200px) {
+  .masonry {
+    columns: 3;
+  }
+}
+@media (max-width: 992px) {
+  .masonry {
+    columns: 3;
+  }
+}
+.masonry .grid {
+  display: inline-block;
+  margin-bottom: 16px;
+  position: relative;
+}
+.masonry .grid:before {
+  border-radius: 5px;
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* background-color: rgba(0, 0, 0, 0.2); */
+}
+.masonry .grid img {
+  width: 100%;
+  border-radius: 7px;
+  z-index: 999999;
+}
+.masonry .grid__title {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0px 0px 10px 0px;
+}
+.masonry .grid__author {
+  font-size: 14px;
+  font-weight: 300;
+}
+.masonry .grid__link {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -1px;
+  bottom: 4px;
+  background: #6564641f;
+  border-radius: 7px;
+}
+.masonry .grid__body {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 30px 5px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+.masonry .grid__tag {
+  color: #333;
+  border-radius: 5px;
+  padding: 5px 15px;
+  margin-bottom: 5px;
+}
+
+.mt-auto {
+  margin-top: auto;
+  text-align: left;
+}
+.mt-auto .grid__tag {
+  margin: 0px auto;
+  color: #fff;
+}
