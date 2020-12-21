@@ -216,4 +216,5 @@
 .mt-auto .grid__tag {
   margin: 0px auto;
   color: #fff;
+  z-index: 9999;
 }
