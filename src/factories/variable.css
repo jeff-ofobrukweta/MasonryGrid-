@@ -1,0 +1,19 @@
+:root {
+  /* theme root color variables */
+  --blue: #1e90ff;
+  --modallightash:#7d7e81ab;
+  --imageblackholder:#c8c8c8;
+  --brighterblack: #6564641f;
+  --white: #ffffff;
+  --milkwhite: #F6F6F6;
+  --lightmilkwhite:#F0F0F0;
+  --lightash:#e6e6e6;
+  --lightskyblue: #dde2e9;
+  --greyblue: #2b3d5c;
+  --ashgrey:rgba(31, 32, 65, 0.25);
+  --lightgrey:#79869b;
+  --black: #000000;
+
+
+
+}

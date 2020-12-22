@@ -13,6 +13,7 @@ export default function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={Gallery}/>
+          <Route exact path="*" component={Gallery}/>
         </Switch>
       </Router>
     </>

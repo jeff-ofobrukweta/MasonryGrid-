@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from '../components/card';
+import Card from '../components/card/card';
 import Modal from '../components/modal/modal';
 import './gallery.css'
 
@@ -61,7 +61,7 @@ export default class Gallery extends React.Component {
                 <div className="searchbar">
                   <div>
                     {
-                      (searchQuery)&&
+                      (searchQuery) &&
                       <>
                         <span className="searchbar__title">Search Result For</span>
                         <span className="search__result">{`"` + searchQuery + `"`}</span>

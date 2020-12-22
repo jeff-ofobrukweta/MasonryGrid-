@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+@import "./factories/variable.css";
+
 
 html,
 body {
@@ -7,7 +9,7 @@ body {
 
 body {
   font-family: "Open Sans", sans-serif;
-  color: black;
+  color: var(--black);
 }
 
 *,

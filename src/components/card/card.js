@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
+import "./card.css";
 
 export default class Card extends React.Component {
   state = {
@@ -25,8 +26,8 @@ export default class Card extends React.Component {
                       <div className="grid__link"></div>
                     </div>
                     <div className="mt-auto">
-                      <p className="grid__tag">{collect.user.first_name}</p>
-                      <p className="grid__tag">{collect.user.last_name}</p>
+                      <p className="grid__tag">{collect?.user?.first_name ? collect?.user?.first_name: '...'}</p>
+                      <p className="grid__tag">{collect?.user?.last_name ? collect?.user?.last_name: '...'}</p>
                     </div>
                   </div>
                 </div>
