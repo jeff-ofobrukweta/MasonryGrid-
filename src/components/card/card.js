@@ -3,12 +3,7 @@ import PropTypes from "prop-types";
 import "./card.css";
 
 export default class Card extends React.Component {
-  state = {
-
-  };
-
-
-
+ 
   render() {
     const { item, showModal, loading } = this.props;
     return (
