@@ -35,7 +35,7 @@ export default class Gallery extends React.Component {
   getName = async () => {
     this.loading = true;
     const res = await fetch(
-      `https://api.unsplash.com/photos/?client_id=${"EA22GMifBMCMBA8T4qzuiA8yOjWChZrVq8zi4ZRto58"}`
+      `https://api.unsplash.com/photos/?client_id=${process.env.REACT_APP_CLIENTID}`
     );
     const data = await res.json();
     this.setState({ data: data });
@@ -71,7 +71,7 @@ export default class Gallery extends React.Component {
                       type="text"
                       onChange={(e) => this.handleSearch(e)}
                       value={searchQuery}
-                      placeholder="Type your keyword"
+                      placeholder="Search for photo"
                       className="input_catalog_search"
                     />
                   </div>

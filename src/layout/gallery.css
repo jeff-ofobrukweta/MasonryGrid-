@@ -20,7 +20,8 @@
   width: 100%;
   max-height: 1.2rem;
   border: 1px solid rgba(31, 32, 65, 0.25);
-  color: #2e3d49;
+  color: #000000;
+  font-weight: bold;
   background: calc(100% - 1.4em) 50%/1.6rem #fff url(https://www.udacity.com/assets/iridium/images/course-catalog/search.svg) no-repeat;
   background-position: 10px center;
   background-size: 17px;
