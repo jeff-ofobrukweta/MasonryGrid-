@@ -6,6 +6,7 @@ import './gallery.css'
 export default class Gallery extends React.Component {
   state = {
     searchQuery: "",
+    searchedList: [],
     data: [],
     show: false,
     loading: true,
@@ -21,7 +22,17 @@ export default class Gallery extends React.Component {
     this.setState({ show: false, modalData: null });
   };
 
-  async getName() {
+  handleSearch = (event) => {
+
+    this.setState({ searchQuery: event.target.value })
+    const { data, searchQuery, searchedList } = this.state;
+
+    const filteredList = data?.filter(job => job.user?.first_name.toLowerCase().includes(searchQuery.toLowerCase()));
+    this.setState({ searchedList: filteredList })
+    return;
+  }
+
+  getName = async () => {
     this.loading = true;
     const res = await fetch(
       `https://api.unsplash.com/photos/?client_id=${"EA22GMifBMCMBA8T4qzuiA8yOjWChZrVq8zi4ZRto58"}`
@@ -36,20 +47,11 @@ export default class Gallery extends React.Component {
     this.getName()
   }
 
-  handleSearch() {
-    this.data = this.data.filter((item) => {
-      let searchString = this.searchQuery.trim().toLowerCase();
-      const result =
-        item.user.first_name.toLowerCase().indexOf(searchString) !== -1
-          ? item
-          : this.data;
-      return result;
-    });
-    return this.data;
-  }
+
 
 
   render() {
+    const { searchQuery, searchedList, data, modalData, loading, show } = this.state;
     return (
       <>
         <div className="layout-parent col-lg">
@@ -57,10 +59,14 @@ export default class Gallery extends React.Component {
             <div className="layout-child-first">
               <div className="search__container">
                 <div className="searchbar">
+                  {/* <p>
+                    <span>Search Result For</span>
+                    <span className="search__result">{searchQuery}</span>
+                  </p> */}
                   <input
                     type="text"
-                    onChange={this.handleSearch}
-                    value={this.state.searchQuery}
+                    onChange={(e) => this.handleSearch(e)}
+                    value={searchQuery}
                     placeholder="Type your keyword"
                     className="input_catalog_search"
                   />
@@ -72,7 +78,7 @@ export default class Gallery extends React.Component {
               <div className="grid-container">
                 {/* the loader here */}
                 {
-                  (this.state.loading) &&
+                  (loading) &&
                   <div className="container">
                     <div className="item" style={{ height: "140px" }}>
                       <div className="card__header">
@@ -114,16 +120,16 @@ export default class Gallery extends React.Component {
                 }
 
                 {/* loader ends here */}
-                <Modal show={this.state.show} handleClose={this.hideModal}>
+                <Modal show={show} handleClose={this.hideModal}>
                   <div className="image__holder" style={{
-                    backgroundImage: `url(${(this.state.modalData?.urls.small)})`
+                    backgroundImage: `url(${(modalData?.urls.small)})`
                   }}>
 
                   </div>
                   <div className="modal__body__inner">
-                    <section className="title">{this.state.modalData?.user.name}</section>
+                    <section className="title">{modalData?.user.name}</section>
                     <section className="title tags">
-                      <span>{this.state.modalData?.user.location}</span>
+                      <span>{modalData?.user.location}</span>
                     </section>
                   </div>
 
@@ -131,9 +137,9 @@ export default class Gallery extends React.Component {
                 <div className="masonry">
 
                   <Card
-                    item={this.state.data}
+                    item={searchQuery ? searchedList : data}
                     showModal={this.showModal}
-                    loading={this.state.loading} />
+                    loading={loading} />
 
                 </div>
               </div>

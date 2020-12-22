@@ -3,21 +3,22 @@ import PropTypes from "prop-types";
 
 export default class Card extends React.Component {
   state = {
-    
+
   };
 
-  
+
 
   render() {
+    const { item, showModal, loading } = this.props;
     return (
       <>
         {
-          (!this.props.loading) &&
+          (!loading) &&
           <div className="background__forcard">
             {
-              this.props.item.map((collect, index) =>
+              item.map((collect, index) =>
               (
-                <div onClick={(e)=>this.props.showModal(e, collect)} className="grid" key={index}>
+                <div onClick={(e) => showModal(e, collect)} className="grid" key={index}>
                   <img src={collect.urls.thumb} />
                   <div className="grid__body">
                     <div className="relative">
