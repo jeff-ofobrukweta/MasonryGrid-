@@ -59,17 +59,22 @@ export default class Gallery extends React.Component {
             <div className="layout-child-first">
               <div className="search__container">
                 <div className="searchbar">
-                  {/* <p>
-                    <span>Search Result For</span>
-                    <span className="search__result">{searchQuery}</span>
-                  </p> */}
-                  <input
-                    type="text"
-                    onChange={(e) => this.handleSearch(e)}
-                    value={searchQuery}
-                    placeholder="Type your keyword"
-                    className="input_catalog_search"
-                  />
+                  <div>
+                    {
+                      (searchQuery)&&
+                      <>
+                        <span className="searchbar__title">Search Result For</span>
+                        <span className="search__result">{`"` + searchQuery + `"`}</span>
+                      </>
+                    }
+                    <input
+                      type="text"
+                      onChange={(e) => this.handleSearch(e)}
+                      value={searchQuery}
+                      placeholder="Type your keyword"
+                      className="input_catalog_search"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
