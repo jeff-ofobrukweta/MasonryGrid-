@@ -6,7 +6,7 @@ Grid test
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Enviroment Variable
-### `add your clientId from splash API in .env file or use  REACT_APP_CLIENTID = EA22GMifBMCMBA8T4qzuiA8yOjWChZrVq8zi4ZRto58 `
+# `add your clientId from splash API in .env file or use  REACT_APP_CLIENTID = EA22GMifBMCMBA8T4qzuiA8yOjWChZrVq8zi4ZRto58 `
 
 
 ## Available Scripts
