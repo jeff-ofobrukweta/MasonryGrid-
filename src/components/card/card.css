@@ -189,7 +189,8 @@
   text-align: left;
 }
 .mt-auto .grid__tag {
-  margin: 0px auto;
-  color: var(--white);
-  z-index: 9999;
+    margin: -6px auto;
+    color: var(--white);
+    z-index: 9999;
+    font-size: 11px;
 }
