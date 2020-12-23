@@ -21,6 +21,7 @@
   max-height: 1.2rem;
   border: 1px solid var(--ashgrey);
   color: var(--black);
+  filter: grayscale(1);
   font-weight: bold;
   background: calc(100% - 1.4em) 50%/1.6rem var(--white) url(https://www.udacity.com/assets/iridium/images/course-catalog/search.svg) no-repeat;
   background-position: 10px center;
