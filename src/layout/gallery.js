@@ -134,7 +134,7 @@ export default class Gallery extends React.Component {
                   <div className="modal__body__inner">
                     <section className="title">{modalData?.user.name}</section>
                     <section className="title tags">
-                      <span>{modalData?.user.location}</span>
+                      <span>{modalData?.user.location? modalData?.user.location: '...'}</span>
                     </section>
                   </div>
 
@@ -145,7 +145,6 @@ export default class Gallery extends React.Component {
                     item={searchQuery ? searchedList : data}
                     showModal={this.showModal}
                     loading={loading} />
-
                 </div>
               </div>
             </div>
